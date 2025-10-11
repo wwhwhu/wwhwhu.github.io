@@ -4,7 +4,17 @@ title: "Publications"
 permalink: /publications/
 author_profile: true
 ---
-
+<style>
+  .wordwrap a {
+    color: #2b6cb0;           /* 默认蓝色 */
+    text-decoration: none;    /* 去掉下划线 */
+    font-weight: 500;
+  }
+  .wordwrap a:hover {
+    color: #1a4a8e;           /* 悬停时更深一点 */
+    text-decoration: underline;
+  }
+</style>
 {% if site.author.googlescholar %}
   <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
 {% endif %}

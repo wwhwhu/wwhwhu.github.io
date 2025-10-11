@@ -1,7 +1,19 @@
 {% include base_path %}
-
+<style>
+  .archive__item-text a {
+    color: #2b6cb0 !important;        /* 链接默认颜色 */
+    text-decoration: none;            /* 去掉下划线 */
+    font-weight: 500;
+  }
+  .archive__item-text a:hover {
+    color: #1a4a8e !important;        /* 鼠标悬停时更深一点 */
+    text-decoration: underline;
+  }
+</style>
 {% if post.header.teaser %}
   {% capture teaser %}{{ post.header.teaser }}{% endcapture %}
+{% elsif post.image %}
+  {% capture teaser %}{{ post.image }}{% endcapture %}
 {% else %}
   {% assign teaser = site.teaser %}
 {% endif %}
@@ -12,73 +24,63 @@
   {% assign title = post.title %}
 {% endif %}
 
-<div class="{{ include.type | default: "list" }}__item">
-  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-    {% if include.type == "grid" and teaser %}
-      <div class="archive__item-teaser">
-        <img src=
-          {% if teaser contains "://" %}
-            "{{ teaser }}"
-          {% else %}
-            "{{ teaser | prepend: "/images/" | prepend: base_path }}"
-          {% endif %}
-          alt="">
-      </div>
-    {% endif %}
+<div class="{{ include.type | default: "list" }}__item" style="margin-bottom:2rem;">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork"
+           style="display:flex; flex-wrap:wrap; align-items:flex-start; gap:20px;">
 
-    <h2 class="archive__item-title" itemprop="headline">
-      {% if post.link %}
-        <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
-      {% else %}
-        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
-      {% endif %}
-    </h2>
-    
-    {% if post.read_time %}
-      <p class="page__meta"><i class="fa fa-clock" aria-hidden="true"></i> {% include read-time.html %}</p>
-    {% endif %}
-
-        {% if post.collection == 'teaching' %}
-          <p> {{ post.type }}, <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.collection == 'publications' %}
-          <p>Published in <i>{{ post.venue }}</i>, {{ post.date | default: "1900-01-01" | date: "%Y" }} </p>
-        {% elsif post.date %}
-         <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].date_label | default: "Published:" }}</strong> <time datetime="{{ post.date | default: "1900-01-01" | date_to_xmlschema }}">{{ post.date | default: "1900-01-01" | date: "%B %d, %Y" }}</time></p>
+    {% if teaser %}
+    <!-- 左侧示意图 -->
+    <div class="archive__item-teaser" style="flex:0 0 200px; max-width:200px;">
+      <img src=
+        {% if teaser contains "://" %}
+          "{{ teaser }}"
+        {% else %}
+          "{{ teaser | prepend: base_path }}"
         {% endif %}
-
-    {% if post.excerpt and site.read_more != 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
-    {% elsif post.excerpt and site.read_more == 'enabled' %}
-    <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
-    {% endif %}
-    
-    {% if post.citation and post.paperurl and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.paperurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation and post.paperurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.paperurl }}">Download Paper</a></p>
-    {% elsif post.citation and post.slidesurl and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl}}">Download Bibtex</a></p>
-    {% elsif post.citation and post.slidesurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.citation and post.bibtexurl %}
-      <p>Recommended citation: {{ post.citation }}<br /><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.citation %}
-      <p>Recommended citation: {{ post.citation }}</p>
-    {% elsif post.paperurl and post.bibtexurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.paperurl %}
-      <p><a href=" {{ post.paperurl }} ">Download Paper</a></p>
-    {% elsif post.slidesurl and post.bibtexurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a> | <a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
-    {% elsif post.slidesurl %}
-      <p><a href="{{ post.slidesurl }}">Download Slides</a></p>
-    {% elsif post.bibtexurl %}
-      <p><a href="{{ post.bibtexurl }}">Download Bibtex</a></p>
+        alt="Thumbnail" style="width:100%; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">
+    </div>
     {% endif %}
 
+    <!-- 右侧文字内容 -->
+    <div class="archive__item-text" style="flex:1; min-width:250px;">
+
+      <h2 class="archive__item-title" itemprop="headline" style="margin-top:0;">
+        {% if post.collection == "service" %}
+        <h2 class="archive__item-title" style="text-decoration:none; border-bottom:none; cursor:default;">
+          {{ title }}
+        </h2>
+        {% elsif post.link %}
+          <a href="{{ post.link }}">{{ title }}</a>
+          <a href="{{ base_path }}{{ post.url }}" rel="permalink">
+            <i class="fa fa-link" aria-hidden="true" title="permalink"></i>
+          </a>
+        {% else %}
+          <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+        {% endif %}
+      </h2>
+
+      {% if post.collection == 'publications' %}
+        <p style="margin:0;">Published in <i>{{ post.venue }}</i>, {{ post.date | date: "%Y" }}</p>
+      {% elsif post.collection == 'teaching' %}
+        <p style="margin:0;"><i>{{ post.venue }}</i>, {{ post.date | date: "%Y" }}</p>
+      {% endif %}
+
+      {% if post.excerpt %}
+        <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
+      {% endif %}
+
+      {% if post.citation %}
+        <p style="margin-top:0.5em;"><strong>Recommended citation</strong>: {{ post.citation }}</p>
+      {% endif %}
+
+      <!-- 下载链接 -->
+      <p style="margin-top:0.3em;">
+        {% if post.paperurl %}<a href="{{ post.paperurl }}">📄 Paper</a>{% endif %}
+        {% if post.slidesurl %} | <a href="{{ post.slidesurl }}">🎞 Slides</a>{% endif %}
+        {% if post.posterurl %} | <a href="{{ post.posterurl }}">📌 Poster</a>{% endif %}
+        {% if post.codeurl %} | <a href="{{ post.codeurl }}">💻 Code</a>{% endif %}
+        {% if post.bibtexurl %} | <a href="{{ post.bibtexurl }}">🔖 BibTeX</a>{% endif %}
+      </p>
+    </div>
   </article>
 </div>

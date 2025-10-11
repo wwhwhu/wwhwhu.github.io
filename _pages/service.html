@@ -1,0 +1,30 @@
+---
+layout: archive
+title: "Service"
+permalink: /service/
+author_profile: true
+---
+
+<style>
+  /* ① 调整条目间距 */
+  .archive__item {
+    margin-bottom: -20px !important; /* 原来约2rem，这里减半 */
+  }
+  
+  /* ② 设置链接颜色 */
+  .archive__item a {
+    color: #2b6cb0;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .archive__item a:hover {
+    color: #1a4a8e;
+    text-decoration: underline;
+  }
+</style>
+
+{% include base_path %}
+
+{% for post in site.service reversed %}
+  {% include archive-single.html %}
+{% endfor %}

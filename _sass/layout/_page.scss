@@ -73,7 +73,7 @@
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none !important;
 
     &:hover {
       text-decoration: underline;
@@ -398,4 +398,91 @@
   margin-bottom: 10px;
   font-size: $type-size-6;
   text-transform: uppercase;
+}
+
+.news-block {
+  background-color: #f9f9fb;
+  border-left: 4px solid #4a90e2;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.news-block a {
+  color: #2b6cb0;
+  text-decoration: none;
+}
+
+.news-block a:hover {
+  color: #1a4a8e;
+  text-decoration: underline;
+}
+
+.news-block li {
+  margin: 0.4rem 0;
+}
+
+.cv-content,
+.cv-content p { color: var(--global-text-color); }
+
+.cv-content a {
+  color: var(--global-link-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+.cv-content a:hover {
+  color: var(--global-link-color-hover);
+  text-decoration: underline;
+}
+.cv-content strong { color: inherit; }  /* 亮色下别强制白色 */
+.cv-date { color: var(--global-text-color); opacity: .8; }
+
+/* ✅ 夜间模式：用 data-theme 选择器 */
+html[data-theme="dark"] .cv-content,
+html[data-theme="dark"] .cv-content p {
+  color: var(--global-text-color-light) !important;
+}
+html[data-theme="dark"] .cv-content a:hover {
+  color: var(--global-link-color-hover) !important;
+}
+html[data-theme="dark"] .cv-date {
+  color: var(--global-text-color-light) !important;
+  opacity: .75;
+}
+
+/* 设置.news-block夜间模式的字体颜色不变 */
+html[data-theme="dark"] .news-block {
+  background-color: #2a2a2e; /* 深色背景 */
+  border-left: 4px solid #4a90e2; /* 保持边框颜色 */
+}
+
+html[data-theme="dark"] .timeline-date {
+  color: #f7fafc !important;
+}
+
+html[data-theme="dark"] .timeline-content {
+  background: #2a2a2e !important;
+  border: 1px solid #444 !important;
+  color: #f7fafc !important;
+}
+
+html[data-theme="dark"] .language-card {
+  background: #2a2a2e !important;
+  border: 1px solid #444 !important;
+  color: #f7fafc !important;
+}
+
+html[data-theme="dark"] .skill-card {
+  background: #2a2a2e !important;
+  border: 1px solid #444 !important;
+  color: #f7fafc !important;
+}
+
+html[data-theme="dark"] .skill-list li {
+  color: #f7fafc !important;
+}
+
+html[data-theme="dark"] .language-level {
+  color: #f7fafc !important;
 }

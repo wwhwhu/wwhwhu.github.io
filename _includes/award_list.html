@@ -1,0 +1,217 @@
+<style>
+    /* ===== Timeline 样式（亮/暗主题自适应） ===== */
+    .timeline {
+      position: relative;
+      margin: 2em 0;
+      padding: 0;
+      list-style: none;
+    }
+    
+    /* 主竖线 */
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 116px;
+      top: 10px;
+      bottom: 0;
+      width: 3px;
+      background: var(--timeline-line, #2b6cb0);
+    }
+    
+    /* 顶部箭头 */
+    .timeline::after {
+      content: "";
+      position: absolute;
+      left: 112px;
+      top: -10px;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-bottom: 10px solid var(--timeline-line, #2b6cb0);
+    }
+    
+    /* 时间节点 */
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.8em;
+      padding-left: 160px;
+    }
+    
+    /* 时间圆点 */
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 110px;
+      top: 10px;
+      width: 12px;
+      height: 12px;
+      background: var(--timeline-line, #2b6cb0);
+      border-radius: 50%;
+      box-shadow: 0 0 0 3px var(--timeline-bg, #fff);
+      transform: translateX(2px);
+    }
+    
+    /* 时间文字 */
+    .timeline-date {
+      position: absolute;
+      left: 0;
+      width: 100px;
+      text-align: right;
+      font-weight: bold;
+      font-size: 0.95rem;
+      color: var(--timeline-text-color,#2b6cb0);
+    }
+    
+    /* 奖项内容卡片 */
+    .timeline-content {
+      background: var(--timeline-card-bg, #f7fafc);
+      border-radius: 10px;
+      padding: 12px 16px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+      color: var(--timeline-card-text, #222);
+    }
+    
+    .timeline-content:hover {
+      transform: scale(1.02);
+      background: var(--timeline-card-hover, #edf2f7);
+    }
+</style>
+    
+
+<ul class="timeline">
+
+    <!-- 2025 -->
+    <li class="timeline-item">
+      <div class="timeline-date">2025.05</div>
+      <div class="timeline-content">
+        <strong>Active Participant in Social Activities</strong> — Wuhan University  
+        <br><em>Recognized for consistent contributions to campus and community events.</em>
+      </div>
+    </li>
+  
+    <!-- 2024 -->
+    <li class="timeline-item">
+      <div class="timeline-date">2024.12</div>
+      <div class="timeline-content">
+        <strong>First-Class Academic Excellence Scholarship & Excellent Graduate (<10%)</strong> — Wuhan University  
+        <br><em>For exceptional research achievements and leadership in graduate studies.</em>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <div class="timeline-date">2024.11</div>
+      <div class="timeline-content">
+        <strong>Didi Company Scholarship</strong>  
+        <br><em>Awarded for outstanding research and innovation potential.</em>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <div class="timeline-date">2024.10</div>
+      <div class="timeline-content">
+        <strong>Advanced Individual Award</strong> — Wuhan University  
+        <br><em>For excellence in academic and extracurricular contributions.</em>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <div class="timeline-date">2024.07</div>
+      <div class="timeline-content">
+        <strong>Excellent Teaching Assistant</strong> — Wuhan University  
+        <br><em>Recognized for outstanding support in the Software Engineering course.</em>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <div class="timeline-date">2024.05</div>
+      <div class="timeline-content">
+        <strong>Active Participant in Social Activities</strong> — Wuhan University  
+        <br><em>For enthusiastic engagement in academic and community events.</em>
+      </div>
+    </li>
+  
+    <!-- 2023 -->
+    <li class="timeline-item">
+      <div class="timeline-date">2023.12</div>
+      <div class="timeline-content">
+        <strong>National Second Prize (<10%)</strong> — China Graduate Mathematical Modeling Competition  
+        <br><em>For exceptional innovation and teamwork in mathematical modeling.</em>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <div class="timeline-date">2023.06</div>
+      <div class="timeline-content">
+        <strong>Excellent Undergraduate Thesis (<5%)</strong> — Wuhan University  
+        <br><em>Recognized for outstanding graduation research quality.</em>
+      </div>
+    </li>
+  
+    <!-- 2022 -->
+    <li class="timeline-item">
+      <div class="timeline-date">2022.12</div>
+      <div class="timeline-content">
+        <strong>Outstanding Student Scholarship (<5%)</strong> — Wuhan University  
+        <br><em>Awarded for excellent academic performance.</em>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <div class="timeline-date">2022.11</div>
+      <div class="timeline-content">
+        <strong>Merit Student (<10%)</strong> — Wuhan University  
+        <br><em>Recognized for exemplary performance in academics, conduct, and health.</em>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <div class="timeline-date">2022.08</div>
+      <div class="timeline-content">
+        <strong>National Second Prize (<5%)</strong> — China College Students Service Outsourcing Innovation & Entrepreneurship Competition  
+        <br><em>Recognized for innovation and teamwork in national-level competition.</em>
+      </div>
+    </li>
+  
+    <!-- 2021 -->
+    <li class="timeline-item">
+      <div class="timeline-date">2021.12</div>
+      <div class="timeline-content">
+        <strong>National Encouragement Scholarship</strong> — Wuhan University  
+        <br><em>Awarded for academic excellence and personal achievement.</em>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <div class="timeline-date">2021.12</div>
+      <div class="timeline-content">
+        <strong>National Second Prize, National English Translation Competition for College Students</strong>  
+        <br><em>Recognized for excellence in English translation.</em>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <div class="timeline-date">2021.12</div>
+      <div class="timeline-content">
+        <strong>Outstanding Student</strong> — Wuhan University  
+        <br><em>For exceptional overall academic and moral performance.</em>
+      </div>
+    </li>
+  
+    <li class="timeline-item">
+      <div class="timeline-date">2021.11</div>
+      <div class="timeline-content">
+        <strong>Provincial Award, China Undergraduate Mathematical Contest in Modeling (<16%)</strong>  
+        <br><em>For outstanding performance in provincial-level competition.</em>
+      </div>
+    </li>
+  
+    <!-- 2020 -->
+    <li class="timeline-item">
+      <div class="timeline-date">2020.12</div>
+      <div class="timeline-content">
+        <strong>National Second Prize</strong> — Mathematics competition of Chinese College Students (CMC)  
+        <br><em>Recognized for excellence in applied mathematics.</em>
+      </div>
+    </li>
+  
+  </ul>
