@@ -158,7 +158,48 @@ redirect_from:
   color: #222;
   line-height: 1.5;
 }
+
+
+/* PDF 下载按钮样式 */
+.pdf-download {
+  position: absolute;
+  top: -10px;
+  right: 25px;
+}
+
+.pdf-download a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #2b6cb0;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: background-color 0.2s ease;
+}
+
+.pdf-download a:hover {
+  background-color: #1a4a8e;
+}
+
+.pdf-download .pdf-icon {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
 </style>
+
+<div style="position: relative;">
+  <div class="pdf-download">
+    <a href="/assets/pdf/CV_WWH.pdf" target="_blank" download>
+      <img src="/images/icons/pdf-icon.svg" alt="Download CV" class="pdf-icon">
+      Download CV
+    </a>
+  </div>
+</div>
 
 🎓 Education
 ======
@@ -288,7 +329,7 @@ redirect_from:
 <div style="margin-top:80px;"></div>
 ---
   
-🤝 Service
+🤝 Services
 ======
   <ul>{% for post in site.service reversed %}
     {% include archive-single-cv.html %}

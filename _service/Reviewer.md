@@ -1,7 +1,7 @@
 ---
-title: "Academic Reviewing Service"
+title: "Academic Reviewing Services"
 collection: service
-type: "Academic Service"
+type: "Academic Services"
 permalink: /service/academic-review
 venue: "Conferences and Journals"
 date: 2025-01-01
