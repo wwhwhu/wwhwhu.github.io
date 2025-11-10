@@ -2,7 +2,7 @@
 title: "PriFairFed: A local differentially private federated learning algorithm for client-level fairnes"
 collection: publications
 category: manuscripts
-permalink: /publication/mimir
+permalink: /publication/prifairfed
 excerpt: 'This paper is about using local differential privacy (LDP) to enhance client-level performance fairness in federated learning systems.'
 date: 2024-12-13
 venue: 'IEEE Transactions on Mobile Computing'

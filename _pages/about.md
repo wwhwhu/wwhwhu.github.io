@@ -23,13 +23,14 @@ a:hover {
 
 Wenhan Wu is a Master’s student in the [School of Computer Science](https://cs.whu.edu.cn/) at Wuhan University (WHU), advised by Prof. [Dazhao Cheng](https://scholar.google.com/citations?user=rRsraIwAAAAJ&hl=en) and Prof. [Chuang Hu](https://scholar.google.com/citations?user=cl9QFQ8AAAAJ&hl=zh-CN) in [Intelligent Computing System Lab (ICSLAB)](https://icslab.whu.edu.cn/). He received his Bachelor’s degree majoring in Computer Science and Technology at the same university in 2023, advised by Prof. [Yili Gong](https://yiligong-whu.github.io/yiligong_homepage/).
 
-His research interests lie in trustworthy machine learning and edge computing, with a focus on federated learning, machine unlearning, and robust large language models. His recent works have been accepted to top-tier conferences and journals such as ACM WWW, IEEE ICDE, IJCAI, and IEEE TMC.
+His research interests lie in trustworthy machine learning and edge computing, with a focus on federated learning, machine unlearning, and robust large language models. His recent works have been accepted to top-tier conferences and journals such as AAAI, WWW, ICDE, IJCAI, and IEEE TMC.
 
 📰 News
 ======
 
 <div class="news-block">
 <ul>
+  <li><b>[Nov 2025]</b> 🚀 One paper titled <i><a href="https://doi.org/10.1109/TMC.2025.3570018">REMISVFU: Vertical Federated Unlearning via Representation Misdirection for Intermediate Output Feature</a></i> accepted to <b>AAAI’26</b>. See you in Singapore in January!</li>
   <li><b>[Aug 2025]</b> ✈️ Attending the <a href="https://skliotsc.um.edu.mo/um-organises-3rd-skl-iotsc-summer-camp-for-outstanding-university-students/">Summer Camp of State Key Laboratory of Internet of Things for Smart City</a> in Macau University. Great to meet everyone there!</li>
   <li><b>[Mar 2025]</b> 🧩 One paper titled <i><a href="https://doi.org/10.1109/TMC.2025.3570018">Mimir: Data-free Federated Unlearning through Client-Specific Prompt Generation for Personalized Models</a></i> accepted to <b>IEEE Transactions on Mobile Computing (TMC’25)</b>.</li>
   <li><b>[Apr 2025]</b> 🚀 One paper titled <i><a href="https://doi.org/10.24963/ijcai.2025/733">Zero-shot Federated Unlearning via Transforming from Data-Dependent to Personalized Model-Centric</a></i> accepted to <b>IJCAI’25</b>. See you in Guangzhou in August!</li>
